@@ -1,0 +1,16 @@
+<!-- <app-hello-world></app-hello-world>
+<app-text-formatter text="Lorem ipsum"></app-text-formatter>
+<app-text-formatter [text]="getText()"></app-text-formatter>
+<app-number-formatter [value]="10"></app-number-formatter> -->
+
+<app-super-button label="Kliknij mnie" [click]="buttonClick"></app-super-button>
+<app-emitter-button label="Kliknij mnie" (onButtonClick)="buttonClick($event)"></app-emitter-button>
+
+<h1 *ngIf="isVisible">Hello world! Jestem warunkowo wyświetlany!</h1>
+<app-text-formatter *ngIf="isVisible" text="Lorem ipsum"></app-text-formatter>
+
+<ul>
+    <li *ngFor="let text of texts">
+        {{text}}
+    </li>
+</ul>
