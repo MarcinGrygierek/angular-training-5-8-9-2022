@@ -1,0 +1,10 @@
+<div *ngIf="flag === true; then template1 else template2"></div>
+<ng-template #template1>
+  lorem ipsum
+</ng-template>
+<ng-template #template2>
+  <app-inside></app-inside>
+</ng-template>
+
+<!-- div zostaje zastąpiony podstawionym szablonem -->
+<div *ngTemplateOutlet="template2"></div>
