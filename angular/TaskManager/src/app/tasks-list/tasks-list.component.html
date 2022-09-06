@@ -1,0 +1,9 @@
+<ul>
+    <app-single-task 
+        *ngFor="let task of tasks; trackBy: taskIdentity"
+        [task]="task"
+        (onDelete)="handleTaskDelete($event)"
+        >
+    </app-single-task>
+</ul>
+<button (click)="addTask()">Dodaj nowe zadanie</button>
