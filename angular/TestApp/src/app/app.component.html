@@ -10,7 +10,9 @@
 <app-text-formatter *ngIf="isVisible" text="Lorem ipsum"></app-text-formatter>
 
 <ul>
-    <li *ngFor="let text of texts">
-        {{text}}
+    <li *ngFor="let user of users; trackBy: userTrackBy; let index = index">
+        <div *ngIf="user.age >= 18">
+            <span [ngClass]="getElementClass(index)">{{user.name}}</span>
+        </div>
     </li>
 </ul>
