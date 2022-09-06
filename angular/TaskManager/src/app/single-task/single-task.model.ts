@@ -7,5 +7,6 @@ export enum TaskStatus {
 export interface Task {
     id: number;
     name: string;
-    status: TaskStatus
+    status: TaskStatus;
+    hidden: boolean;
 }

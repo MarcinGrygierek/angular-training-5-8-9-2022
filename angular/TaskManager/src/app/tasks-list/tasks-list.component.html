@@ -1,9 +1,14 @@
-<ul>
-    <app-single-task 
-        *ngFor="let task of tasks; trackBy: taskIdentity"
-        [task]="task"
-        (onDelete)="handleTaskDelete($event)"
-        >
-    </app-single-task>
-</ul>
 <button (click)="addTask()">Dodaj nowe zadanie</button>
+<div *ngIf="totalTime > 0">
+    Czas całkowity: {{totalTime}}s
+</div>
+<ul>
+    <ng-container *ngFor="let task of tasks; trackBy: taskIdentity">
+        <app-single-task 
+            *ngIf="task.hidden === false"
+            [task]="task"
+            (onDelete)="handleTaskDelete($event)"
+            >
+        </app-single-task>
+    </ng-container>
+</ul>

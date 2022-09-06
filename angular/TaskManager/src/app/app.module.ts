@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SingleTaskComponent } from './single-task/single-task.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
+import { PageContentComponent } from './page-content/page-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SingleTaskComponent,
-    TasksListComponent
+    TasksListComponent,
+    PageContentComponent
   ],
   imports: [
     BrowserModule

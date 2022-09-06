@@ -1,4 +1,4 @@
 <li>
-    [{{task.id}}] {{ task.name }} ({{ getTaskStatus(task) }})
+    [{{task.id}}] {{ task.name }} ({{ getTaskStatus(task) }}) <small>({{counter}}s)</small>
     <button (click)="deleteTask(task.id)">Usuń</button>
 </li>
