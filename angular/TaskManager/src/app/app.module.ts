@@ -8,6 +8,9 @@ import { PageContentComponent } from './page-content/page-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskFormReactiveComponent } from './task-form-reactive/task-form-reactive.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { TaskFormReactiveComponent } from './task-form-reactive/task-form-reacti
     TasksListComponent,
     PageContentComponent,
     TaskFormComponent,
-    TaskFormReactiveComponent
+    TaskFormReactiveComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
+  FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,13 @@
 <app-page-content title="Lista zadań">
-  <app-tasks-list></app-tasks-list>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="home">Strona główna</a>
+      </li>
+      <li>
+        <a routerLink="tasks">Lista zadań</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </app-page-content>
