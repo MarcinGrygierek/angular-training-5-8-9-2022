@@ -1,4 +1,6 @@
-<button (click)="addTask()">Dodaj nowe zadanie</button>
+<app-task-form [addNewTask]="addTask"></app-task-form>
+<app-task-form-reactive [addNewTask]="addTask"></app-task-form-reactive>
+
 <div *ngIf="totalTime > 0">
     Czas całkowity: {{totalTime}}s
 </div>

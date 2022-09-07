@@ -1,0 +1,4 @@
+<form [formGroup]="taskForm"  (ngSubmit)="handleNewTask()">
+    <input type="text" name="name" formControlName="newTaskName">
+    <button type="submit" [disabled]="taskForm.invalid">Dodaj zadanie</button>
+</form>

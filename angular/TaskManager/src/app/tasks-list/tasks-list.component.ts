@@ -35,10 +35,10 @@ export class TasksListComponent implements OnInit, AfterViewInit {
     this.totalTime = times.reduce((acc, curr) => acc + curr);
   }
 
-  addTask = () => {
+  addTask = (taskName: string) => {
     const newTask: Task = {
       id: new Date().getTime(),
-      name: 'Lorem ipsum',
+      name: taskName,
       status: TaskStatus.New,
       hidden: false
     }
