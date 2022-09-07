@@ -1,0 +1,15 @@
+<div class="smart-div">
+    <header>
+        <!-- 
+            *ngIf użyty na ng-content nie powoduje inicjalizacji/zniszczenia komponentu
+            komponent jest inicjowany już wcześniej.
+            Najlepiej nie używać *ngIf dla ng-content
+        -->
+        <ng-content *ngIf="isVisible"></ng-content>
+    </header>
+    <section>
+        <ng-content *ngIf="isVisible" select="[content]"></ng-content>
+    </section>
+</div>
+
+<button (click)="toggle()">Toggle</button>

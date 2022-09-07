@@ -7,6 +7,7 @@ import { TextFormatterComponent } from './text-formatter/text-formatter.componen
 import { NumberFormatterComponent } from './number-formatter/number-formatter.component';
 import { SuperButtonComponent } from './super-button/super-button.component';
 import { EmitterButtonComponent } from './emitter-button/emitter-button.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EmitterButtonComponent } from './emitter-button/emitter-button.componen
     TextFormatterComponent,
     NumberFormatterComponent,
     SuperButtonComponent,
-    EmitterButtonComponent
+    EmitterButtonComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule

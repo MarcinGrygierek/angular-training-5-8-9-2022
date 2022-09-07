@@ -1,0 +1,5 @@
+<ul>
+  <ng-container *ngFor="let user of users; trackBy: userIdentity">
+    <li *ngIf="user.age >= 18">{{user.name}}</li>
+  </ng-container>
+</ul>

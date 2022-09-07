@@ -1,0 +1,16 @@
+<div #ref>
+  <p>
+    {{ text }}  
+  </p>
+</div>
+
+<!-- ref wskazuje na element w drzewie DOM - więc możemy wykorzystywać jego właściwości -->
+{{ ref.innerText.length }}
+
+<input type="text" #myInput value="Lorem ipsum dolor sit">
+<button (click)="myInput.focus()">Ustaw focus</button>
+
+<app-test #test></app-test>
+{{ test.value }}
+
+<button (click)="handleClick()">Test</button>

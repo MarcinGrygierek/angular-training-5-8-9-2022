@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserModel } from './user/user.model';
 
 interface User {
   id: number;
@@ -31,6 +32,12 @@ export class AppComponent {
       age: 40
     }
   ]
+
+  user: UserModel = {
+    id: 1,
+    name: 'Marcin',
+    age: 18
+  }
 
   getText = () => {
  

@@ -9,6 +9,8 @@
 <h1 *ngIf="isVisible">Hello world! Jestem warunkowo wyświetlany!</h1>
 <app-text-formatter *ngIf="isVisible" text="Lorem ipsum"></app-text-formatter>
 
+<app-user [user]="user"></app-user>
+
 <ul>
     <li *ngFor="let user of users; trackBy: userTrackBy; let index = index">
         <div *ngIf="user.age >= 18">
