@@ -1,0 +1,15 @@
+<div class='bmi-calculator'>
+  <form [formGroup]="bmiForm">
+    <div class="bmi-input-field">
+      <label for="height">Wzrost [cm]</label>
+      <input type="number" formControlName="height" name="height" required>
+    </div>
+    <div class="bmi-input-field">
+      <label for="weight">Waga [kg]</label>
+      <input type="number" formControlName="weight" name="weight" required>
+    </div>
+    <div class="bmi-result">
+     {{getBmi()}}
+    </div>
+  </form>
+</div>
