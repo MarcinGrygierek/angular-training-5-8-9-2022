@@ -1,0 +1,17 @@
+<form #myForm="ngForm" (ngSubmit)="handleSubmit()">
+  <div>
+    <label for="login">Login</label>
+    <input name="login" type="text" [(ngModel)]="data.login" #login="ngModel" required>
+    <div *ngIf="login.errors && login.touched">
+      <p *ngIf="login.errors.required">Login jest wymagany</p>
+    </div>
+  </div>
+  <div>
+    <label for="password">Hasło</label>
+    <input name="password" type="text" [(ngModel)]="data.password" #password="ngModel" required>
+    <div *ngIf="password.errors && password.touched">
+      <p *ngIf="password.errors.required">Hasło jest wymagane</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="myForm.invalid">Wyślij</button>
+</form>
