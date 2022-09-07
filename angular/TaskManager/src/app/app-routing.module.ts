@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TasksListComponent } from './tasks-list/tasks-list.component';
 
 const routes: Routes = [
+  { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
+  { path: 'tasks', loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule) },
   {
-    path: 'home', component: HomeComponent
-  },
-  {
-    path: 'tasks', component: TasksListComponent
-  },
-  {
-    path: '', pathMatch: 'full', redirectTo: 'home'
+    path: '', pathMatch: 'full', redirectTo: 'landing'
   },
   {
     path: '**', component: PageNotFoundComponent
