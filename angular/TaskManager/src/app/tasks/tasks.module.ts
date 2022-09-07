@@ -9,7 +9,6 @@ import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskFormReactiveComponent } from './task-form-reactive/task-form-reactive.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     TasksComponent,
