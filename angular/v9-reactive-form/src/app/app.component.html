@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+  <div>
+    <label for="login">Login</label>
+    <input name="login" type="text" formControlName="login">
+    <div *ngIf="hasErrors('login')">
+      <p *ngIf="getErrors('login').required">Login jest wymagany</p>
+      <p *ngIf="getErrors('login').minlength">Wymagane minimum 3 znaki</p>
+    </div>
+  </div>
+  <div>
+    <label for="password">Hasło</label>
+    <input name="password" type="password" formControlName="password">
+    <div *ngIf="hasErrors('password')">
+      <p *ngIf="getErrors('password').required">Login jest wymagany</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Wyślij</button>
+  <button type="button" (click)="resetLogin()">Wyczyść login</button>
+  <button type="button" (click)="resetPassword()">Wyczyść hasło</button>
+</form>
