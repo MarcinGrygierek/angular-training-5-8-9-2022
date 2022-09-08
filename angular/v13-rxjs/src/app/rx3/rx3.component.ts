@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { from, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
@@ -14,7 +14,8 @@ export class Rx3Component implements OnInit {
   ngOnInit(): void {
     const years = [1993, 2005, 1998, 2010, 2000];
 
-    const obsYears = from(years);
+    // const obsYears = from(years);
+    const obsYears = of(...years)
 
     obsYears
       .pipe(
