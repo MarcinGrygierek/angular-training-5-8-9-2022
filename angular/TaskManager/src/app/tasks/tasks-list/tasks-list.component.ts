@@ -1,24 +1,25 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TasksService } from 'src/app/tasks.service';
 import { SingleTaskComponent } from '../single-task/single-task.component';
-import { Task, TaskStatus } from '../single-task/single-task.model';
+import { Task } from '../single-task/single-task.model';
 @Component({
   selector: 'app-tasks-list',
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.scss']
 })
 export class TasksListComponent implements OnInit, AfterViewInit {
-  tasks: Task[] = [{
-    id: 1,
-    name: 'Lorem',
-    status: TaskStatus.New,
-    hidden: false
-  }];
+  tasks!: Observable<Task[]>;
 
   checkInterval!: any;
   totalTime: number = 0;
 
   @ViewChildren(SingleTaskComponent)
   taskComponents!: QueryList<SingleTaskComponent>
+
+  constructor(private tasksService: TasksService) {
+    this.tasks = this.tasksService.tasks;
+  }
 
   ngOnInit(): void {
     this.checkInterval = setInterval(() => {
@@ -32,34 +33,15 @@ export class TasksListComponent implements OnInit, AfterViewInit {
 
   getTotalTime = () => {
     const times = this.taskComponents.map(task => task.counter);
-    this.totalTime = times.reduce((acc, curr) => acc + curr);
+    this.totalTime = times.reduce((acc, curr) => acc + curr, 0);
   }
 
-  addTask = (taskName: string) => {
-    const newTask: Task = {
-      id: new Date().getTime(),
-      name: taskName,
-      status: TaskStatus.New,
-      hidden: false
-    }
-
-    // mutujemy oryginalną tablicę
-    // this.tasks.push(newTask);
-
-    // niemutujemy - tworzymy nową tablicę
-    this.tasks = [...this.tasks, newTask];
+  addTask = (name: string) => {
+    this.tasksService.addTask(name);
   }
 
   handleTaskDelete = (id: number) => {
-    // permamentne usunięcie z listy
-    // this.tasks = this.tasks.filter(task => task.id !== id)
-    this.tasks = this.tasks.map(task => {
-      if(task.id === id) return {
-        ...task,
-        hidden: true
-      }
-      return task
-    })
+    this.tasksService.deleteDask(id);
   }
 
   taskIdentity = (index: number, task: Task) => task.id;

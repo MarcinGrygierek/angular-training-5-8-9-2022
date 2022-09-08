@@ -5,7 +5,7 @@
     Czas całkowity: {{totalTime | time}}
 </div>
 <ul>
-    <ng-container *ngFor="let task of tasks; trackBy: taskIdentity">
+    <ng-container *ngFor="let task of tasks | async; trackBy: taskIdentity">
         <app-single-task 
             *ngIf="task.hidden === false"
             [task]="task"
