@@ -1,0 +1,6 @@
+<button (click)="addUser()">Dodaj użytkownika</button>
+<ul>
+    <li *ngFor="let user of users | async">
+        {{user.name}}
+    </li>
+</ul>
