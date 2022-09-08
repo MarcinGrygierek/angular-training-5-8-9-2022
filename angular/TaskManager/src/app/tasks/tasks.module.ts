@@ -8,6 +8,7 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskFormReactiveComponent } from './task-form-reactive/task-form-reactive.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TimePipe } from '../time.pipe';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SingleTaskComponent,
     TasksListComponent,
     TaskFormComponent, 
-    TaskFormReactiveComponent
+    TaskFormReactiveComponent, TimePipe,
   ],
   imports: [
     CommonModule,
     TasksRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class TasksModule { }

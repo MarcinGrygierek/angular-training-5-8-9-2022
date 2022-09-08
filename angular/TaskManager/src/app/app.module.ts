@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     PageContentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

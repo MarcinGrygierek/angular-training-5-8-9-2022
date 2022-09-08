@@ -2,7 +2,7 @@
 <app-task-form-reactive [addNewTask]="addTask"></app-task-form-reactive>
 
 <div *ngIf="totalTime > 0">
-    Czas całkowity: {{totalTime}}s
+    Czas całkowity: {{totalTime | time}}
 </div>
 <ul>
     <ng-container *ngFor="let task of tasks; trackBy: taskIdentity">
