@@ -12,6 +12,8 @@ export class UsersInfoComponent implements OnInit, OnDestroy {
   interval: any;
   constructor(private usersService: UsersService) { }
 
+  // To nie jest dobre podejście, lepiej jakby to serwis nas informował
+  // za każdym razem jak pojawią się nowe dane - subskrypcja
   ngOnInit(): void {
     this.interval = setInterval(() => {
       this.count = this.usersService.getUsersCount();
